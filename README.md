@@ -1,25 +1,72 @@
-# YouTube Link
-https://www.youtube.com/watch?v=_FKGOXCwlWQ
-![image](https://user-images.githubusercontent.com/72432304/120898147-ad21ac00-c63a-11eb-9a72-0b7535f97e67.png)
+#  Traffic Rules Violation Detection System  
+### Vehicle Detection and Speed Estimation using Image Processing
 
+##  Project Overview
+This project implements a **video-based traffic monitoring system** to detect moving vehicles and estimate their speed using **digital image processing techniques**. The system aims to provide a **low-cost alternative to radar-based speed detection systems** by leveraging a stationary camera and computer vision algorithms.
 
-# SpeedRadar-OpenCV-
-This code focusses on Object Tracking and Speed Estimation of vehicles passing by a road. The camera angle is from slightly above the road, (similar to the video given)
+The solution detects vehicles from video footage, tracks them across frames, estimates their speed, captures images of speeding vehicles, and generates a summary report of traffic violations.
 
-![AbuDhabi_Traffic](https://user-images.githubusercontent.com/72432304/120893909-ad17b100-c626-11eb-92ad-4d1ff314265b.JPG)
+---
 
+##  Objectives
+- Detect moving vehicles from a stationary camera
+- Track vehicles across video frames
+- Estimate vehicle speed accurately
+- Capture and store images of speeding vehicles
+- Generate a summary of detected vehicles and violations
 
-# Video
-Any Similar Video would do, however there would be some changes you'll have to make to the code if you choose a different video. This is due to a change of scene, distance estimation and pixel clarity. 
+---
 
-For SpeedRadar2.py, the region of interest, the red timer lines and the area threshold used for detecting vehicles.
+##  System Workflow
+1. **Video Acquisition**
+2. **Frame Differencing**
+3. **Region of Interest (ROI) & Masking**
+4. **Contour Detection & Object Tracking**
+5. **Speed Estimation**
+6. **Vehicle Image Capture**
+7. **Summary Generation**
 
-For tracker2.py, the numbers given in the update() function and getsp() fuction would change for a different video.
+---
 
+##  Tools & Technologies
 
-# Files
-I created a file named "TrafficRecord" (which contains a file named "exceeded") for saving images of vehicles. Change the directory in the tracker2.py file accordingly for the code to work.
+### Programming & Libraries
+- **Python**
+- **OpenCV**
+- **NumPy**
 
+### Development Environment
+- **Visual Studio Code**
 
+### Hardware Requirements
+- Windows 9 / 10 / 11 (64-bit)
+- Minimum Resolution: 1280 × 800
+- RAM: 8 GB (Recommended)
 
+---
+
+##  Methodology
+
+###  Vehicle Detection
+- Background subtraction is used since the camera is stationary.
+- Moving vehicles are isolated using frame differencing.
+
+###  Object Tracking
+- Contour detection identifies vehicle boundaries.
+- Each vehicle is assigned a unique ID and tracked across frames.
+
+###  Speed Estimation
+- Speed is calculated based on the distance traveled between frames.
+- Pixel movement is converted to real-world distance using **pixels-per-meter (PPM)** calibration.
+- Speed is displayed in **km/h**.
+
+###  Image Capture
+- Vehicle images are saved once speed is calculated.
+- Vehicles exceeding the speed limit are stored in a separate folder.
+
+###  Summary Report
+- A text file logs:
+  - Total vehicles detected
+  - Individual vehicle speeds
+  - Speeding violations
 
